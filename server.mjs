@@ -4,7 +4,7 @@ import * as fs from "fs/promises";
 
 const port = 5000;
 
-function getRequestData(request) {
+function getRequestData(req) {
   if (req.url === "/") {
     let status = 200;
     return JSON.stringify({
