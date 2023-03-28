@@ -10,9 +10,10 @@ function getRequestData(req) {
     return JSON.stringify({
       status,
       pageBanner: data.pageBanner,
-      homestay1: data.homestay1,
-      homestay2: data.homestay2,
-      homestay3: data.homestay3,
+      homestays: data.homestays,
+      locationSection: data.locationSection,
+      activities: data.activities,
+      servicesBanner: data.servicesBanner,
       wellnessService: data.wellnessService,
       giftCardService: data.giftCardService,
       spaService: data.spaService,

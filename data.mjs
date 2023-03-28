@@ -1,10 +1,27 @@
 export const pageBanner = "https://i.ibb.co/7jdCPws/banner-Banner.jpg";
 
-export const homestay1 = "https://i.ibb.co/K7khbYz/homestay1.jpg";
+export const homestays = {
+  homestay1: "https://i.ibb.co/K7khbYz/homestay1.jpg",
+  homestay2: "https://i.ibb.co/GknZN9C/homestay2.jpg",
+  homestay3: "https://i.ibb.co/y5cGBhb/homestay3.jpg",
+};
 
-export const homestay2 = "https://i.ibb.co/GknZN9C/homestay2.jpg";
+export const locationSection = {
+  flowerLogo: "https://i.ibb.co/VQ4Gg48/flower.jpg",
+  busLogo: "https://i.ibb.co/RjsmpTw/bus.jpg",
+  vanLogo: "https://i.ibb.co/1Q7JRFW/van.jpg",
+  planeLogo: "https://i.ibb.co/bJHw5qg/plane.jpg",
+  largeTravelPicture: "https://i.ibb.co/TW3WNt9/travel-Image1.jpg",
+  smallTravelPicture1: "https://i.ibb.co/S008SJS/travel-Image2.jpg",
+  smallTravelPicture2: "https://i.ibb.co/MgfV0Zd/travel-Image3.jpg",
+};
 
-export const homestay3 = "https://i.ibb.co/y5cGBhb/homestay3.jpg";
+export const servicesBanner = "https://i.ibb.co/dBKh7XR/banner.jpg";
+
+export const activities = {
+  poolActivity: "https://i.ibb.co/hBXjhRs/pool.jpg",
+  forestHomestayActivity: "https://i.ibb.co/QXtygJJ/forest-Homestay.jpg",
+};
 
 export const wellnessService = {
   url: "https://i.ibb.co/xYCYXrH/wellness.jpg",
