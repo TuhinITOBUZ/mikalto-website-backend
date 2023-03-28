@@ -35,13 +35,12 @@ const server = http.createServer((req, res) => {
     });
     req.on("end", () => {
       let totalFormData = Buffer.concat(formData).toString();
-      if (totalFormData.length > 0) {
-        (async function () {
-          const dataFromFile = await fs.readFile("./formData.txt", "utf8");
-          totalFormData += ";" + dataFromFile;
-          await fs.writeFile("./formData.txt", totalFormData);
-        })();
+      async function writeFormData() {
+        const dataFromFile = await fs.readFile("./formData.txt", "utf8");
+        totalFormData += ";" + dataFromFile;
+        await fs.writeFile("./formData.txt", totalFormData);
       }
+      writeFormData()
     });
     res.end(getRequestData(req));
   } catch (err) {
