@@ -1,6 +1,7 @@
 import http from "http";
 import * as data from "./data.mjs";
 import * as fs from "fs/promises";
+import { parse } from "querystring";
 
 const port = 5000;
 
@@ -19,28 +20,32 @@ function getRequestData(req) {
       spaService: data.spaService,
       adventureService: data.adventureService,
       showRooms: data.showRooms,
+      text: data.text,
     });
   } else {
     return JSON.stringify("Page not available.");
   }
 }
 
+async function writeFormData(formData) {
+  const dataFromFile = await fs.readFile("./formData.txt", "utf8");
+  const fileData = JSON.parse(dataFromFile)
+  fileData.push(formData)
+  await fs.writeFile("./formData.txt", JSON.stringify(fileData));
+}
+
 const server = http.createServer((req, res) => {
   try {
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Headers", "*");
-    const formData = [];
+    let formData = "";
     req.on("data", (formDataPeices) => {
-      formData.push(formDataPeices);
+      formData = formDataPeices.toString();
     });
     req.on("end", () => {
-      let totalFormData = Buffer.concat(formData).toString();
-      async function writeFormData() {
-        const dataFromFile = await fs.readFile("./formData.txt", "utf8");
-        totalFormData += ";" + dataFromFile;
-        await fs.writeFile("./formData.txt", totalFormData);
+      if (Object.keys(formData).length !== 0) {
+        writeFormData(parse(formData))
       }
-      writeFormData()
     });
     res.end(getRequestData(req));
   } catch (err) {

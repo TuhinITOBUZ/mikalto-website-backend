@@ -1,1 +1,1 @@
-;;;;;;;
+[{"id":"1680080003044","checkInDate":"2023-03-23","checkOutDate":"2023-03-31","noOfAdults":"1","noOfChildren":"0"},{"id":"1680081083190","checkInDate":"2023-03-23","checkOutDate":"2023-03-31","noOfAdults":"1","noOfChildren":"0"}]
