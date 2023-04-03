@@ -10,7 +10,7 @@ function getRequestData(req) {
   if (req.url === "/") {
     return JSON.stringify({
       status,
-      text : "Welcome to Rest API"
+      text: "Welcome to Rest API"
     });
   } else if (req.url === "/page-banner") {
     return JSON.stringify({
@@ -28,30 +28,30 @@ function getRequestData(req) {
       showRooms: data.showRooms,
     });
   }
-  else if (req.url === "/our-hotel-services"){
+  else if (req.url === "/our-hotel-services") {
     return JSON.stringify({
       status,
-      ourHostelServices : data.ourHostelServices,
+      ourHostelServices: data.ourHostelServices,
     })
-  } 
-  else if (req.url === "/services"){
+  }
+  else if (req.url === "/services") {
     return JSON.stringify({
       status,
-      services : data.services,
+      services: data.services,
     })
-  } 
-  else if (req.url === "/reviews"){
+  }
+  else if (req.url === "/reviews") {
     return JSON.stringify({
       status,
-      reviews : data.reviews,
+      reviews: data.reviews,
     })
-  } 
-  else if (req.url === "/location"){
+  }
+  else if (req.url === "/location") {
     return JSON.stringify({
       status,
-      location : data.locationSection,
+      location: data.locationSection,
     })
-  } 
+  }
   else {
     return JSON.stringify("Page not available.");
   }
